@@ -113,5 +113,17 @@ add_action('init', function () {
         remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
     }
 });
+
+// add something ad end of article
+
+add_filter('the_content','add_my_content');
+function add_my_content($content) {
+$my_custom_text = '<br><p><font size="3">For More Article Visit <a href="https://pisev.com/">Pisev</a>.</font></p>'; 
+if(is_single() && !is_home()) {
+$content .= $my_custom_text;
+}
+return $content;
+}
+
 add_filter('wp_feed_cache_transient_lifetime', create_function('', 'return 300;'));
 
