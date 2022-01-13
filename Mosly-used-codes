@@ -117,9 +117,9 @@ add_action('init', function () {
 
 add_filter('the_content','add_my_content');
 function add_my_content($content) {
-$my_custom_text = '<br><p><font size="3"><a href="'.get_the_permalink().'">'.get_the_title().'</a>.For More Article Visit <a href="'.get_site_url().'">'.get_bloginfo().'</a><br>
+$my_custom_text = '<br><p><font size="2"><a href="'.get_the_permalink().'">'.get_the_title().'</a>.<br>For More Article Visit <a href="'.get_site_url().'">'.get_bloginfo().'</a><br>
 
-<br><center><a href="https://news.google.com/publications/CAAqBwgKMMrMqAswvNfAAw"><img src="https://khabarhd.com/wp-content/uploads/2022/01/Google-News-Follow.png" alt="google news" ></a></center>
+<br><center><a href="https://news.google.com/publications/CAAqBwgKMKrcrAswt-fEAw"><img src="https://lh3.googleusercontent.com/-hngC_9Ox_CI/YeBZpu8BPWI/AAAAAAAABOE/Ko-5Vy9rxfs5WllHkI9CoPvn1rC2E4rAgCNcBGAsYHQ/h98/Google-News-Follow.png" alt="google news" ></a></center>
 
 </font></p>'; 
 
