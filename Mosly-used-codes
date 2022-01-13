@@ -114,11 +114,10 @@ add_action('init', function () {
     }
 });
 
-// add something ad end of article
 
 add_filter('the_content','add_my_content');
 function add_my_content($content) {
-$my_custom_text = '<br><p><font size="3">For More Article Visit <a href="https://pisev.com/">Pisev</a>.</font></p>'; 
+$my_custom_text = '<br><p><font size="3"><a href="'.get_the_permalink().'">'.get_the_title().'</a>.For More Article Visit <a href="'.get_site_url().'">'.get_bloginfo().'</a></font></p>'; 
 if(is_single() && !is_home()) {
 $content .= $my_custom_text;
 }
@@ -126,15 +125,3 @@ return $content;
 }
 
 add_filter('wp_feed_cache_transient_lifetime', create_function('', 'return 300;'));
-
-//
-
-add_filter('the_content','add_my_content');
-function add_my_content($content) {
-$my_custom_text = '<br><p><font size="3"><a href="'.get_the_permalink().'">'.get_the_title().'</a>.</font></p>'; 
-if(is_single() && !is_home()) {
-$content .= $my_custom_text;
-}
-return $content;
-}
-
