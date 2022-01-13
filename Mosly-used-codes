@@ -117,7 +117,12 @@ add_action('init', function () {
 
 add_filter('the_content','add_my_content');
 function add_my_content($content) {
-$my_custom_text = '<br><p><font size="3"><a href="'.get_the_permalink().'">'.get_the_title().'</a>.For More Article Visit <a href="'.get_site_url().'">'.get_bloginfo().'</a></font></p>'; 
+$my_custom_text = '<br><p><font size="3"><a href="'.get_the_permalink().'">'.get_the_title().'</a>.For More Article Visit <a href="'.get_site_url().'">'.get_bloginfo().'</a><br>
+
+<br><center><a href="https://news.google.com/publications/CAAqBwgKMMrMqAswvNfAAw"><img src="https://khabarhd.com/wp-content/uploads/2022/01/Google-News-Follow.png" alt="google news" ></a></center>
+
+</font></p>'; 
+
 if(is_single() && !is_home()) {
 $content .= $my_custom_text;
 }
@@ -125,3 +130,16 @@ return $content;
 }
 
 add_filter('wp_feed_cache_transient_lifetime', create_function('', 'return 300;'));
+
+// Auto add featured image
+function wpsites_auto_set_featured_image() {
+   global $post;
+   $featured_image_exists = has_post_thumbnail($post->ID);
+      if (!$featured_image_exists)  {
+         $attached_image = get_children( "post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+         if ($attached_image) {
+            foreach ($attached_image as $attachment_id => $attachment) {set_post_thumbnail($post->ID, $attachment_id);}
+         }
+      }
+}
+add_action('the_post', 'wpsites_auto_set_featured_image');
