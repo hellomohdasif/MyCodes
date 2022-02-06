@@ -5,20 +5,12 @@ firewall-cmd --zone=public --add-port=8090/tcp
 
 #######################################################
 
-### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
-
 RewriteEngine On
 RewriteCond %{HTTPS}  !=on
 RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 
 ### End CyberPanel Generated Rules.
-
-
 RewriteEngine on
-
-
-RewriteCond %{HTTP_HOST} ^lucikun\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.lucikun\.com$
+RewriteCond %{HTTP_HOST} ^ravideflix\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ravideflix\.com$
 RewriteRule ^(.*)$ "https\:\/\/techtwiddle\.com\/$1" [R=301,L]
-
-
