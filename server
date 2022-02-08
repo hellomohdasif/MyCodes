@@ -17,6 +17,9 @@ RewriteRule ^(.*)$ "https\:\/\/techtwiddle\.com\/$1" [R=301,L]
 
 ##############################################################
 
+Find: <iframe\s([^>]*)><\/iframe>
+Replace: [iframe $1]
+
 <div class="rll-youtube-player" data-src
 <iframe src
 
