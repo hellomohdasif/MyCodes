@@ -1,0 +1,23 @@
+.chp_ads_blocker_detector-title{
+	font-size:35px;
+}
+.chp_ads_blocker_detector-message{
+	font-weight:500!important;
+	font-size:18px;
+	color:gray;
+	text-align:center;
+}
+.chp_ads_blocker_detector-action a{
+	background-color:#10b98e;
+	color:white;
+	height:46px; line-height:45px;
+	width:100%; border-radius:50px;
+}
+.chp_ads_blocker_detector-action a:hover{
+	background-color:black;
+	color:white;
+}
+.chp_branding{
+    display:none;
+        
+}
