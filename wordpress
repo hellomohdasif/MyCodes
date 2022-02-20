@@ -49,15 +49,28 @@ add_action('init', function () {
 });
 #####################################################################################
 
-// Exclude category 
+###main#####
+
 function exclude_category_home( $query ) {
 if ( $query->is_home ) {
-$query->set( 'user_id', '-3' );
+$query->set( 'author', '-6' );
 }
 return $query;
 }
- 
 add_filter( 'pre_get_posts', 'exclude_category_home' );
+
+
+
+// Exclude category 
+
+function exclude_category_home( $query ) {
+if ( $query->is_home ) {
+$query->set( 'author', '-6' );
+}
+return $query;
+}
+add_filter( 'pre_get_posts', 'exclude_category_home' );
+
 
 
 // Exclude Author 
