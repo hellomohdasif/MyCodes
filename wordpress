@@ -1,6 +1,11 @@
 <img [^>]*src="[^"]*"[^>]*>
 
 ####################################
+
+body:not(.logged-in) .post-share-btn-group {
+        display: none;
+}
+#######################################
 add_action('admin_init', function () {
     // Redirect any user trying to access comments page
     global $pagenow;
